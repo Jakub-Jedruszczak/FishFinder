@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+        <title>Admin Control Panel</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="logo.jpg">
+</head>
+<body>
+        <h1>Control Panel</h1>
+        <img src="logo.jpg" alt="image source: https://www.vecteezy.com/vector-art/4998211-magnifying-glass-with-jumping-fish-inside" style="width:50%; height:50%">
+        <p>The most advanced fish database!</p>
+	
+	
+        <a href="index.php">log out</a>
+</body>
+</html>

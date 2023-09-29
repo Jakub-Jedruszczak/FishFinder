@@ -1,0 +1,36 @@
+services:
+  mysql:
+    container_name: database
+    hostname: database
+    image: mysql:5
+    networks:
+      net:
+        ipv4_address: 10.10.1.2
+    volumes:
+      - ./mySQL/data:/docker-entrypoint-initdb.d
+    environment:
+      - MYSQL_USER=db_admin
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 3306:3306
+
+  php:
+    container_name: webserver
+    hostname: webserver
+    image: php:5.3-apache
+    networks:
+      net:
+        ipv4_address: 10.10.1.1
+    volumes:
+      - ./webserver:/var/www/html
+      - ./SPOILERS/webserver/priv:/root/.ssh # copies private rsa key into .ssh folder
+      - ./SPOILERS/webserver/pub:/var/www/html/data # copies public into web directory
+    ports:
+      - 8080:80
+
+networks:
+  net:
+    ipam:
+      config:
+        - subnet: 10.10.1.0/8
