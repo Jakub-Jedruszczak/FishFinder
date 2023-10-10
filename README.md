@@ -11,7 +11,7 @@ docker-compose up /path/to/main/folder
 ```
 
 *Note: Since the Docker images used within this project are Debian based please run these containers on a Linux environment.*
-*Please do not expose this intentionally vulnerable container cluser to the Internet!*
+*Please do not expose this intentionally vulnerable container cluster to the Internet!*
 
 ## How to start
 
