@@ -2,17 +2,23 @@
 <head>
         <title>Admin Control Panel</title>
         <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/x-icon" href="logo.jpg">
+        <link rel="icon" type="image/x-icon" href="logo.png">
 </head>
 <body>
 	<?php
+		# check if logged in
+		if ($_COOKIE['login'] != "pass")
+		{
+			die('Forbidden');
+		}
+
 		mysql_connect("10.10.1.2:3306", "root", "root") or
  		die("Error connecting to database: " . mysql_error());
 		mysql_select_db("fish") or die(mysql_error());
 	?>
 
         <h1>Control Panel</h1>
-        <img src="logo.jpg" alt="image source: https://www.vecteezy.com/vector-art/4998211-magnifying-glass-with-jumping-fish-inside" style="width:50%; height:50%">
+        <img src="logo.png" alt="image source: https://www.vecteezy.com/vector-art/4998211-magnifying-glass-with-jumping-fish-inside" style="width:50%; height:50%">
         <p>The most advanced fish database!</p>
         
         <form method="GET" action="admin.php">
