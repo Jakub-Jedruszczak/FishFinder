@@ -2,7 +2,7 @@
 <head>
         <title>Login</title>
         <link rel="stylesheet" href="styles.css">
-        <link rel="icon" type="image/x-icon" href="logo.jpg">
+        <link rel="icon" type="image/x-icon" href="logo.png">
 </head>
 <body>
 	<!--
@@ -19,18 +19,20 @@
 
         if (username == "admin" && password == "welcome")
         {
+                document.cookie = "login=pass";
 		return true;
         }
         else
         {
                 alert("Incorrect username or password");
+                document.cookie = "login=fail";
 		return false;
         }
         }
         </script>
 
         <h1>Fish Finder</h1>
-        <img src="logo.jpg" alt="image source: https://www.vecteezy.com/vector-art/4998211-magnifying-glass-with-jumping-fish-inside" style="width:50%; height:50%">
+        <img src="logo.png" alt="image source: https://www.vecteezy.com/vector-art/4998211-magnifying-glass-with-jumping-fish-inside" style="width:50%; height:50%">
         <p>The most advanced fish database!</p>
 
         <form onsubmit="return Login()" action="admin.php">
